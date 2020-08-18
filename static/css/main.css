@@ -1,3 +1,6 @@
+@import "./style-content.css";
+@import "./site-search.css";
+
 body {
   color: #453899;
   background-color: #C4F5F8;
@@ -7,9 +10,4 @@ body {
 
 a:hover {
   color: #990F0F
-}
-
-.content--yellow {
-  background-color: #fff15c;
-  
 }
