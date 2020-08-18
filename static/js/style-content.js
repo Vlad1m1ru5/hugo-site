@@ -1,9 +1,13 @@
 (function (window) {
-  function start() {
-    const $content = document.getElementById("content");
-    $content.classList.add("content--yellow");
-  }
+  
+    function start() {
+      
+        const $content = document.getElementById("content");
 
-  window.addEventListener("load", start)
+        $content.classList.add("content--yellow");
 
-})(window)
+    };
+
+    window.addEventListener("load", start);
+
+})(window);

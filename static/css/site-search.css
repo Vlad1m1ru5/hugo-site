@@ -1,3 +1,7 @@
+.hidden {
+  visibility: hidden;
+}
+
 .site-search__results {
   position: fixed;
   background-color: #C4F5F8;  
