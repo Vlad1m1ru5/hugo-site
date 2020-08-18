@@ -9,7 +9,10 @@
 
         $siteSearchTitleInput.addEventListener("input", function (event) {
 
-            if (event.currentTarget.value) {
+            if (
+                event.currentTarget.value &&
+                $siteSearchResults.classList.contains("hidden")
+            ) {
 
                 $siteSearchResults.classList.remove("hidden");
 
