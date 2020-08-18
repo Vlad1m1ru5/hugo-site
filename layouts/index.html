@@ -7,6 +7,7 @@
         {{ end }}
       </header>
       <div class="homepage-content">
+        {{ .Content }}
         {{ range .Data.Pages }}
           <a href="{{ .Permalink | relURL }}">
             <h2>{{ .Title }}</h2>
