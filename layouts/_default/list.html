@@ -5,7 +5,7 @@
       {{ else }}
       <h2>Accessible Pages</h2>
     {{ end }}
-    {{ .Content }}`
+    {{ .Content }}
     {{ range .Pages }}
       <a href="{{ .Permalink | relURL }}">{{ .Name }}</a>
     {{ end }}

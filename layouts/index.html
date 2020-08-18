@@ -8,7 +8,7 @@
       </header>
       <div class="homepage-content">
         {{ .Content }}
-        {{ range .Data.Pages }}
+        {{ range .Site.RegularPages }}
           <a href="{{ .Permalink | relURL }}">
             <h2>{{ .Title }}</h2>
           </a>
