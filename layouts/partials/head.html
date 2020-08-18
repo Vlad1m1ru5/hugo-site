@@ -1,3 +1,9 @@
 <head>
   <title>My title is visible</title>
+  {{ if .Site.Params.main_css }}
+    <link rel="stylesheet" href="{{ .Site.Params.main_css | absURL }}">
+  {{ end }}
+  {{ if .Site.Params.main_js }}
+    <script type="text/javascript" src="{{ .Site.Params.main_js }}" defer></script>
+  {{ end }}
 </head>
