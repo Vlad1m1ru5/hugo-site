@@ -1,10 +1,9 @@
 {{ define "main" }}
   <main>
-    <h2>Nothing found</h2>
-    {{ if .Site.BaseURL }}
-      <span>
-        Please, come back <a {{ printf `href=%s` . | safeHTMLAttr }}>Home</a>
-      </span>
-    {{ end }}
+    <h2>Sorry, nothing found.</h2>
+    <span>&#127921;</span>
+    <span>
+      Please, come back <a href="{{ .Site.BaseURL | relURL }}">Home</a>
+    </span>
   </main>
 {{ end }}
