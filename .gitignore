@@ -1,2 +1,5 @@
 # hugo
 public/
+
+# client
+**/node_modules/
