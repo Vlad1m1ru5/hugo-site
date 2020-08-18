@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <main>
+    {{ with .Title }}
+      <h2>{{ . }}</h2>
+      {{ else }}
+      <h2>Accessible Pages</h2>
+    {{ end }}
+    {{ range .Data.Pages }}
+      <a href="{{ .Permalink | relURL }}">{{.Name }}</a>
+    {{ end }}
+  </main>
+{{ end }}
