@@ -6,6 +6,7 @@
 
 </style>
 
-<a href="/">
-  <h3>{item.label}</h3>
+<a class="page-snippet" href="/">
+  <h3 class="page-snippet__title">{item.label}</h3>
+  <span class="page-snippet__content-preview"></span>
 </a>

@@ -6,7 +6,6 @@
 
 	const noOptionsMessage = 'Нет результатов'
 	const placeholder = 'Начните вводить текст поиска'
-	let hideEmptyState = true
 
 	const loadOptions = async (filterText) => {
 

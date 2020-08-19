@@ -6,12 +6,13 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
 const mode = process.env.NODE_ENV || "development"
 const devtool = mode === "development" ? "inline-source-map" : "none"
+const clientPath = "./client"
 
 module.exports = {
   mode,
   devtool,
   entry: {
-    dist: "./src/index.js"
+    dist: `${clientPath}/src/index.js`
   },
   output: {
     path: path.resolve(__dirname, "public/js/"),
@@ -54,7 +55,7 @@ module.exports = {
       ]
     }),
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
+      template: `${clientPath}/src/index.html`
     })
   ]
 }
