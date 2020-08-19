@@ -15,9 +15,14 @@ module.exports = {
     dist: `${clientPath}/src/index.js`
   },
   output: {
-    path: path.resolve(__dirname, "public/js/"),
+    path: path.resolve(__dirname, "static/js/"),
     filename: "[name].js",
     chunkFilename: "[name].[contentHash].js"
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all"
+    }
   },
   module: {
     rules: [
@@ -44,14 +49,14 @@ module.exports = {
     extensions: [".mjs", ".js", ".svelte"]
   },
   devServer: {
-    contentBase: path.join(__dirname, "public")
+    contentBase: path.join(__dirname, "static")
   },
   plugins: [
     new ProgressPlugin(),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
-        { from: `${clientPath}/data`, to: "./data" }
+        { from: `${clientPath}/js/data`, to: "./data" }
       ]
     }),
     new HtmlWebpackPlugin({

@@ -14,7 +14,7 @@
 		}
 
 		try {
-			const response = await fetch('/data/items.json')
+			const response = await fetch('/js/data/items.json')
 			const items = await response.json()
 			
 			const result = items.byValue
