@@ -1,14 +1,3 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "My New Hugo Site"
-
-[params]
-  css_list = [
-    "css/main.css",
-    "css/site-search.css",
-    "css/style-content.css"
-  ]
-  js_list = [
-    "js/site-search.js",
-    "js/style-content.js"
-  ]

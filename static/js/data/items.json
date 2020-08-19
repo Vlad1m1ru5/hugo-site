@@ -1,0 +1,11 @@
+{
+  "byValue": [
+		{ "value": "smth", "label": "Smth" },
+		{ "value": "marko", "label": "Marko" },
+		{ "value": "uno", "label": "Uno" },
+		{ "value": "polo", "label": "Polo" },
+		{ "value": "foo", "label": "Foo" },
+		{ "value": "bar", "label": "Bar" },
+		{ "value": "baz", "label": "Baz" }
+	]
+}
