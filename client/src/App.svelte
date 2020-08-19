@@ -9,16 +9,26 @@
 
 	const loadOptions = async (filterText) => {
 
-		const labelFilter = ({ label }) => {
-			return label.toLocaleLowerCase().includes(filterText.trim().toLocaleLowerCase())
+		const pattern = filterText.trim().toLocaleLowerCase()
+
+		const itemFilter = ({ title, contents, permalink }) => {
+
+			const isInTitileFilterText = title.toLocaleLowerCase().includes(pattern)
+			const isInContentsFilterText = contents.toLocaleLowerCase().includes(pattern)
+
+			const result = (
+				isInContentsFilterText ||
+				isInTitileFilterText
+			)
+
+			return result
 		}
 
 		try {
-			const response = await fetch('/js/data/items.json')
+			const response = await fetch('/index.json')
 			const items = await response.json()
 			
-			const result = items.byValue
-				.filter(labelFilter)
+			const result = items.filter(itemFilter)
 
 			return result
 		} catch (error) {

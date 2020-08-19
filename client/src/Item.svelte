@@ -6,7 +6,7 @@
 
 </style>
 
-<a class="page-snippet" href="/">
-  <h3 class="page-snippet__title">{item.label}</h3>
-  <span class="page-snippet__content-preview"></span>
+<a class="page-snippet" href={item.permalink}>
+  <h3 class="page-snippet__title">{item.title}</h3>
+  <span class="page-snippet__content-preview">{item.contents.slice(0, 10).concat('...')}</span>
 </a>

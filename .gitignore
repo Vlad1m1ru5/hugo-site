@@ -3,3 +3,6 @@ public/
 
 # client
 **/node_modules/
+
+# geretated js
+static/js/**

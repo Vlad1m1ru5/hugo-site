@@ -4,6 +4,6 @@ date: 2020-08-18T09:52:05+03:00
 draft: true
 ---
 
-  {{< highlight div >}}
-    Something
+  {{< highlight js >}}
+    const stubFunction = () => {}
   {{< /highlight >}}
