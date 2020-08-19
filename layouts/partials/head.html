@@ -2,12 +2,12 @@
   <title>My title is visible</title>
   {{ range (readDir "./static/css") }}
     {{ if strings.HasSuffix .Name ".css" }}
-      <link rel="stylesheet" href="css/{{ .Name }}">
+      <link rel="stylesheet" href="{{ $.Site.BaseURL }}css/{{ .Name }}">
     {{ end }}
   {{ end }}
   {{ range (readDir "./static/js") }}
     {{ if strings.HasSuffix .Name ".js" }}
-      <script type="text/javascript" src="js/{{ .Name }}" defer></script>
+      <script type="text/javascript" src="{{ $.Site.BaseURL }}js/{{ .Name }}" defer></script>
     {{ end }}
   {{ end }}
 </head>

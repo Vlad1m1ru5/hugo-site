@@ -16,5 +16,5 @@
 
 ## Сборка
 
-1. Выполнить ```sh npm start build```
+1. Выполнить ```sh npm run build```
 2. Выполнить ```sh hugo server -D```
