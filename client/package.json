@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --compress",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "prod": "cross-env NODE_ENV=production webpack-dev-server --open --hot --compress",
     "build": "cross-env NODE_ENV=production webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,11 +13,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "svelte": "^3.24.1"
+    "svelte": "^3.24.1",
+    "svelte-select": "^3.11.1"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
+    "css-loader": "^4.2.1",
     "html-webpack-plugin": "^4.3.0",
+    "style-loader": "^1.2.1",
     "svelte-loader": "^2.13.6",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",

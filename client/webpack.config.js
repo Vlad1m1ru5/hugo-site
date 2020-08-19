@@ -11,7 +11,7 @@ module.exports = {
     dist: "./src/index.js"
   },
   output: {
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "public/js/"),
     filename: "[name].js",
     chunkFilename: "[name].[contentHash].js"
   },
@@ -20,7 +20,19 @@ module.exports = {
       {
         test: /\.(svelte)$/,
         exclude: /node_modules/,
-        use: "svelte-loader"
+        use: {
+          loader: "svelte-loader",
+          options: {
+            emitCss: true
+          }
+        }
+      },
+      {
+        test: /\.css$/,
+        loaders: [
+          "style-loader",
+          "css-loader"
+        ]
       }
     ]
   },
