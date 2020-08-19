@@ -1,7 +1,7 @@
 <head>
   <title>My title is visible</title>
-  {{ range .Site.Params.css_list }}
-    <link rel="stylesheet" href="{{ . | absURL }}">
+  {{ range ( readDir "./static/css" ) }}
+    <link rel="stylesheet" href="css/{{ .Name }}">
   {{ end }}
   {{ range .Site.Params.js_list }}
     <script type="text/javascript" src="{{ . | absURL }}" defer></script>
