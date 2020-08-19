@@ -3,6 +3,8 @@
 
 	const greatings = 'HELLO FROM SVELTE'
 
+	const noOptionsMessage = 'Загрузка...'
+
 	const items = [
 		{ value: "smth", label: "Smth" },
 		{ value: "marko", label: "Marko" },
@@ -19,6 +21,7 @@
 		--main-color: #bc8f8f;
 		--complement-color: #8fbc8f;
 	}
+
 	.site-search {
 		--placeholderColor: var(--main-color);
 		
@@ -33,9 +36,15 @@
 	.site-search__title--light {
 	  color: var(--main-color);
 	}
+
+	@media screen and (min-width: 560px) {
+		.site-search {
+			width: 50%;
+		}
+	}
 </style>
 
 <section class='site-search'>
 	<h1 class='site-search__title site-search__title--light'>{greatings}</h1>
-	<Select {items} class='site-search__select' />
+	<Select {items} {noOptionsMessage} />
 </section>
