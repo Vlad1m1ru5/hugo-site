@@ -1,29 +1,25 @@
 <script>
 	import Select from 'svelte-select'
+	import Item from './item'
 
 	const greatings = 'HELLO FROM SVELTE'
 
-	const noOptionsMessage = 'Загрузка...'
+	const noOptionsMessage = 'Нет результатов'
+	const placeholder = 'Начните вводить текст поиска'
+	let hideEmptyState = true
 
 	const loadOptions = async () => {
 		try {
-			const data = await fetch('/data/items.json')
-			const items = JSON.parse(data)
-			return itemsByValue.byValue	
+			const response = await fetch('/data/items.json')
+			const items = await response.json()
+			return items.byValue	
 		} catch (error) {
 			return []
 		}
 	}
 
-	const items = [
-		{ value: "smth", label: "Smth" },
-		{ value: "marko", label: "Marko" },
-		{ value: "uno", label: "Uno" },
-		{ value: "polo", label: "Polo" },
-		{ value: "foo", label: "Foo" },
-		{ value: "bar", label: "Bar" },
-		{ value: "baz", label: "Baz" }
-	]
+	const getOptionLabel = (option) => option.label;
+	
 </script>
 
 <style>
@@ -56,5 +52,11 @@
 
 <section class='site-search'>
 	<h1 class='site-search__title site-search__title--light'>{greatings}</h1>
-	<Select {loadOptions} {noOptionsMessage} />
+	<Select
+		{placeholder}
+		{loadOptions}
+		{getOptionLabel}
+		{noOptionsMessage}
+		{Item}
+	/>
 </section>
