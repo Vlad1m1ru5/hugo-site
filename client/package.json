@@ -17,6 +17,8 @@
     "svelte-select": "^3.11.1"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.0.3",
     "cross-env": "^7.0.2",
     "css-loader": "^4.2.1",
     "html-webpack-plugin": "^4.3.0",

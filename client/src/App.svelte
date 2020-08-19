@@ -5,6 +5,16 @@
 
 	const noOptionsMessage = 'Загрузка...'
 
+	const loadOptions = async () => {
+		try {
+			const data = await fetch('/data/items.json')
+			const items = JSON.parse(data)
+			return itemsByValue.byValue	
+		} catch (error) {
+			return []
+		}
+	}
+
 	const items = [
 		{ value: "smth", label: "Smth" },
 		{ value: "marko", label: "Marko" },
@@ -46,5 +56,5 @@
 
 <section class='site-search'>
 	<h1 class='site-search__title site-search__title--light'>{greatings}</h1>
-	<Select {items} {noOptionsMessage} />
+	<Select {loadOptions} {noOptionsMessage} />
 </section>
