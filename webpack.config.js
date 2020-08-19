@@ -5,7 +5,8 @@ const ProgressPlugin = require("webpack/lib/ProgressPlugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
 const mode = process.env.NODE_ENV || "development"
-const devtool = mode === "development" ? "inline-source-map" : "none"
+const isDevMode = mode === "development"
+const devtool = isDevMode ? "inline-source-map" : "none"
 const clientPath = "./client"
 
 module.exports = {
@@ -53,14 +54,18 @@ module.exports = {
   },
   plugins: [
     new ProgressPlugin(),
-    new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: `${clientPath}/js/data`, to: "./data" }
-      ]
-    }),
-    new HtmlWebpackPlugin({
-      template: `${clientPath}/src/index.html`
-    })
-  ]
+    new CleanWebpackPlugin()
+  ].concat(!isDevMode ?
+    [] :
+    [
+      new CopyWebpackPlugin({
+        patterns: [
+          { from: `${clientPath}/`, to: "./" }
+        ]
+      }),
+      new HtmlWebpackPlugin({
+        template: `${clientPath}/src/index.html`
+      })
+    ]
+  )
 }
