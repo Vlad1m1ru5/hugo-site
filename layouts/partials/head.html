@@ -1,9 +1,11 @@
 <head>
   <title>My title is visible</title>
-  {{ range ( readDir "./static/css" ) }}
-    <link rel="stylesheet" href="css/{{ .Name }}">
+  {{ range (readDir "./static/css") }}
+    {{ if strings.HasSuffix .Name ".css" }}
+      <link rel="stylesheet" href="css/{{ .Name }}">
+    {{ end }}
   {{ end }}
-  {{ range .Site.Params.js_list }}
+  {{ range (readDir "./static/js" | ) }}
     <script type="text/javascript" src="{{ . | absURL }}" defer></script>
   {{ end }}
 </head>
