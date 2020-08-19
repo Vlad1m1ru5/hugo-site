@@ -17,9 +17,6 @@
 			return []
 		}
 	}
-
-	const getOptionLabel = (option) => option.label;
-	
 </script>
 
 <style>
@@ -55,7 +52,6 @@
 	<Select
 		{placeholder}
 		{loadOptions}
-		{getOptionLabel}
 		{noOptionsMessage}
 		{Item}
 	/>
