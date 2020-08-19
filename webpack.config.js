@@ -51,7 +51,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
-        { from: "./data", to: "./data" }
+        { from: `${clientPath}/data`, to: "./data" }
       ]
     }),
     new HtmlWebpackPlugin({
