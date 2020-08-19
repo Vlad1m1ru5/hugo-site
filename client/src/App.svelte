@@ -8,11 +8,20 @@
 	const placeholder = 'Начните вводить текст поиска'
 	let hideEmptyState = true
 
-	const loadOptions = async () => {
+	const loadOptions = async (filterText) => {
+
+		const labelFilter = ({ label }) => {
+			return label.toLocaleLowerCase().includes(filterText.trim().toLocaleLowerCase())
+		}
+
 		try {
 			const response = await fetch('/data/items.json')
 			const items = await response.json()
-			return items.byValue	
+			
+			const result = items.byValue
+				.filter(labelFilter)
+
+			return result
 		} catch (error) {
 			return []
 		}
