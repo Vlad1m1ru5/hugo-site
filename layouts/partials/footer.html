@@ -1,0 +1,13 @@
+<footer>
+  <h2>Это подвал всех страниц</h2>
+  <p>Перечень всех "конечных" страниц</p>
+  <ul>
+    {{ range .Site.RegularPages }}
+      <li>
+        <div>
+          <p>{{ .Name }}</p>
+        </div>
+      </li>
+    {{ end }}
+  </ul>
+</footer>
