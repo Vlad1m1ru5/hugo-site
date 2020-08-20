@@ -10,4 +10,7 @@ riiiiiii
 {{< figure src="./78809294.jpg" alt="Oh, no!" >}}
 
 **Show .svg image.**
-{{< figure src="./react.svg" alt="Oh^ not again!" >}}
+{{< figure src="./react.svg" alt="Oh, not again!" >}}
+
+**Show .json data**
+{{< download "./some-content.json" "Json" >}}

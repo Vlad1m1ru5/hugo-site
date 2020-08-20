@@ -1,0 +1,5 @@
+<!-- download.html -->
+{{ with .Get 0 }}
+  <a href="{{ . | absURL }}" target="_blank" rel="noopener noreferrer" download>{{ with $.Get 1 }}{{ . | string }}{{ else }}Скачать{{ end }}</a>
+{{ end }}
+<!-- конец download.html -->

@@ -1,0 +1,9 @@
+{
+  "first-key": "first-value",
+  "second-key": {
+    "second-key-inner-key": "second-key-inner-value"
+  },
+  "third-key": {
+    "third-key-inner-key": [1, 2, 3, 4]
+  }
+}
