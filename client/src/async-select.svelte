@@ -1,14 +1,21 @@
 <script>
-  import Select from 'svelte-select'
-  
-  export let Item = undefined
-  
+	import Select from 'svelte-select'
+	
+	export let Item = undefined
+
+	let selectedValue = undefined
+
 	const optionIdentifier = "id"
   const noOptionsMessage = 'Нет результатов'
 	const placeholder = 'Начните вводить текст поиска'
 
-	const getOptionLabel = (option) => option.title
-	const getSelectionLabel = (option) => option.title
+	const getSelectionLabel = (option) => {
+		if (option && option.permalink) {
+			window.location.href = option.permalink	
+		}
+
+		return option.title
+	}
 	
 	const loadOptions = async (filterText) => {
 
@@ -41,10 +48,10 @@
 </script>
 
 <Select
-  {placeholder}
-  {loadOptions}
-  {getOptionLabel}
-  {noOptionsMessage}
-  {getSelectionLabel}
-  {Item}
+	{placeholder}
+	{loadOptions}
+	{noOptionsMessage}
+	{getSelectionLabel}
+	{Item}
+	bind:selectedValue
 />

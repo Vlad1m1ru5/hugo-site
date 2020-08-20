@@ -25,12 +25,6 @@
 	.site-search__title--light {
 	  color: var(--main-color);
 	}
-
-	@media screen and (min-width: 560px) {
-		.site-search {
-			width: 50%;
-		}
-	}
 </style>
 
 <section class='site-search'>
