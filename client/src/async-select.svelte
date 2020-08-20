@@ -7,8 +7,10 @@
   const noOptionsMessage = 'Нет результатов'
 	const placeholder = 'Начните вводить текст поиска'
 
-	const getOptionLabel = (option) => option.permalink
-	const getSelectionLabel = (option) => option.title
+	const getSelectionLabel = (option, ...args) => {
+		console.log(option)
+		return option.title
+	}
 	
 	const loadOptions = async (filterText) => {
 
@@ -41,10 +43,9 @@
 </script>
 
 <Select
-  {placeholder}
-  {loadOptions}
-  {getOptionLabel}
-  {noOptionsMessage}
-  {getSelectionLabel}
+	{placeholder}
+	{loadOptions}
+	{noOptionsMessage}
+	{getSelectionLabel}
 	{Item}
 />
