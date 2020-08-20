@@ -1,0 +1,14 @@
+[
+  {
+    "contents": "const stubFunction = () =\u0026gt; {}  ",
+    "id": "aHR0cDovL2xvY2FsaG9zdDoxMzEzL3Bvc3RzL2hpZ2hsaWdodC10ZXh0Lw==",
+    "permalink": "http://localhost:1313/posts/highlight-text/",
+    "title": "Highlight Text"
+  },
+  {
+    "contents": "Some content goes here\n",
+    "id": "aHR0cDovL2xvY2FsaG9zdDoxMzEzL2ZpcnN0LWNvbnRlbnQv",
+    "permalink": "http://localhost:1313/first-content/",
+    "title": "First Content"
+  }
+]

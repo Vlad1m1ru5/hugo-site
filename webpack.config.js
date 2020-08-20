@@ -13,12 +13,15 @@ module.exports = {
   mode,
   devtool,
   entry: {
-    dist: `${clientPath}/src/index.js`
+    index: `${clientPath}/src/index.js`,
+    app: `${clientPath}/src/app.svelte`,
+    item: `${clientPath}/src/item.svelte`,
+    asyncList: `${clientPath}/src/async-select.svelte`
   },
   output: {
     path: path.resolve(__dirname, "static/js/"),
-    filename: "[name].js",
-    chunkFilename: "[name].[contentHash].js"
+    filename: "[name].[hash].js",
+    chunkFilename: "[name].[contenthash].js"
   },
   optimization: {
     splitChunks: {

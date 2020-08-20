@@ -2,15 +2,12 @@
   import Select from 'svelte-select'
   
   export let Item = undefined
-
-  const noOptionsMessage = 'Нет результатов'
   
+	const optionIdentifier = "id"
+  const noOptionsMessage = 'Нет результатов'
 	const placeholder = 'Начните вводить текст поиска'
 
-	const optionIdentifier = "id"
-
 	const getOptionLabel = (option) => option.title
-	
 	const getSelectionLabel = (option) => option.title
 	
 	const loadOptions = async (filterText) => {
