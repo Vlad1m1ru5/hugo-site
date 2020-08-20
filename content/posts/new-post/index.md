@@ -12,5 +12,8 @@ riiiiiii
 **Show .svg image.**
 {{< figure src="./react.svg" alt="Oh, not again!" >}}
 
-**Show .json data**
+**Show .json download**
 {{< download "./some-content.json" "Json" >}}
+
+**Show .json data**
+{{< preview "/posts/new-post/some-content.json" >}}
