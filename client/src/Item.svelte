@@ -1,10 +1,7 @@
 <script>
   export let item = undefined
+  export const getOptionLabel = undefined
 </script>
-
-<style>
-
-</style>
 
 <a class="page-snippet" href={item.permalink}>
   <h3 class="page-snippet__title">{item.title}</h3>

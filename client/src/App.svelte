@@ -1,40 +1,8 @@
 <script>
-	import Select from 'svelte-select'
 	import Item from './item'
+	import AsyncSelect from './async-select'
 
 	const greatings = 'HELLO FROM SVELTE'
-
-	const noOptionsMessage = 'Нет результатов'
-	const placeholder = 'Начните вводить текст поиска'
-
-	const loadOptions = async (filterText) => {
-
-		const pattern = filterText.trim().toLocaleLowerCase()
-
-		const itemFilter = ({ title, contents, permalink }) => {
-
-			const isInTitileFilterText = title.toLocaleLowerCase().includes(pattern)
-			const isInContentsFilterText = contents.toLocaleLowerCase().includes(pattern)
-
-			const result = (
-				isInContentsFilterText ||
-				isInTitileFilterText
-			)
-
-			return result
-		}
-
-		try {
-			const response = await fetch('/index.json')
-			const items = await response.json()
-			
-			const result = items.filter(itemFilter)
-
-			return result
-		} catch (error) {
-			return []
-		}
-	}
 </script>
 
 <style>
@@ -67,10 +35,5 @@
 
 <section class='site-search'>
 	<h1 class='site-search__title site-search__title--light'>{greatings}</h1>
-	<Select
-		{placeholder}
-		{loadOptions}
-		{noOptionsMessage}
-		{Item}
-	/>
+	<AsyncSelect {Item} />
 </section>
