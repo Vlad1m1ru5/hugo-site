@@ -1,0 +1,5 @@
+<!-- preview.html -->
+{{ with .Get 0 }}
+  <pre>{{ . | relURL | readFile | safeHTML }}</pre>
+{{ end }}
+<!-- конец: preview.html -->
